@@ -11,4 +11,14 @@ function getUserDetails_sync() {
     return 'Elise';
 }
 
-doSomething_sync();
+// Async
+function doSomething_async() {
+    getUserDetails_async((data) => console.log(data));
+    console.log('Disponible');
+}
+
+function getUserDetails_async(callback) {
+    setTimeout(() => callback('Elise'), 2000);
+}
+
+doSomething_async();
