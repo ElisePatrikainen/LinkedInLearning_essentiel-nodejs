@@ -1,4 +1,6 @@
+const person = require('./module')
+const http = require('http')
+
 console.log(process.env.NODE_ENV)
-process.env.NODE_ENV = 'production'
+require('dotenv').config()
 console.log(process.env.NODE_ENV)
-console.log('bonjour')

@@ -1,0 +1,23 @@
+{
+  "name": "essentiel-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElisePatrikainen/LinkedInLearning_essentiel-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElisePatrikainen/LinkedInLearning_essentiel-nodejs/issues"
+  },
+  "homepage": "https://github.com/ElisePatrikainen/LinkedInLearning_essentiel-nodejs#readme"
+}
