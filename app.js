@@ -1,4 +1,5 @@
 
-const exemple = require('./events/limite-callbacks_exemple');
+const exemple = require('./events/eventEmittter_exemple');
 
-exemple.timer(undefined, undefined, () => console.log('3 secondes écoulées.'));
+exemple.timer.on('3_secondes', () => console.log('3 secondes écoulées.'));
+exemple.launchTimer();
