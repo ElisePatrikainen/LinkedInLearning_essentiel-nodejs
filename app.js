@@ -1,6 +1,5 @@
-const person = require('./module')
-const http = require('http')
 
-console.log(process.env.NODE_ENV)
-require('dotenv').config()
-console.log(process.env.NODE_ENV)
+const exemple = require('./events/customEventEmittter');
+
+exemple.timer.on('3_secondes', () => console.log('3 secondes écoulées.'));
+exemple.launchTimer();
