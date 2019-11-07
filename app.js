@@ -1,6 +1,4 @@
-const person = require('./modules-npm/module')
-const http = require('http')
 
-console.log(process.env.NODE_ENV)
-require('dotenv').config()
-console.log(process.env.NODE_ENV)
+const exemple = require('./events/limite-callbacks_exemple');
+
+exemple.timer(undefined, undefined, () => console.log('3 secondes écoulées.'));
