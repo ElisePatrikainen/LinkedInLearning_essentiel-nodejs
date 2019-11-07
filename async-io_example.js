@@ -12,6 +12,13 @@ function callback() {
     console.log('Process \'bigFile\' terminé, durée ' + (Date.now() - date) + ' ms.')
 }
 
-fs.writeFile('bigFile', generateData(), callback)
+fs.writeFile('bigFile', generateData(), () => callback())
 const date = Date.now();
 console.log('Disponible.');
+
+fs.readFile('bigFile1', (err, data) => {
+    if (err) {
+        throw new Error('Erreur détectée.')
+    }
+    console.log(data)
+})
