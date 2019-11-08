@@ -1,8 +1,9 @@
+const fs = require('fs');
+const writeFileStream = fs.createWriteStream('../bigFile');
 
 process.stdin.setEncoding('utf8');
-process.stdin.on("data", evaluate)
-process.stdin.on("pause", () => console.log('Terminé.'))
+process.stdin.on("data", pipeToWriteStream)
 
-function evaluate(input) {
-    input.includes('pause') ? process.stdin.pause(): console.log(input);
+function pipeToWriteStream(input) {
+    writeFileStream.write(input);
 }
