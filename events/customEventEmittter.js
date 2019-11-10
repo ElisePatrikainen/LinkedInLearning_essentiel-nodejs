@@ -8,5 +8,5 @@ function launchTimer() {
     setTimeout(() => timer.emit('3_secondes'), 3000);
 }
 
-exports.timer = timer;
-exports.launchTimer = launchTimer;
+timer.on('3_secondes', () => console.log('3 secondes écoulées.'));
+launchTimer(); 

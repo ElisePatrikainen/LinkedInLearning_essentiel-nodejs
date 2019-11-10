@@ -1,5 +1,13 @@
+require('dotenv').config()
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
 
-const exemple = require('./events/customEventEmittter');
+require('./router').initRouter(app);
 
-exemple.timer.on('3_secondes', () => console.log('3 secondes écoulées.'));
-exemple.launchTimer();
+const userRepo = require('./repository/user');
+userRepo.saveUser();
+
+mongoose.connect(process.env.mongoDb, {useNewUrlParser: true, useUnifiedTopology: true});
+
+app.listen(8000);

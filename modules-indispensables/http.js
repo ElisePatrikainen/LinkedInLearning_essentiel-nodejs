@@ -1,14 +1,10 @@
-const http = require('http');
 const url = require('url');
+const express = require('express');
+const app = express();
 
-function handleRequest(req, res) {
-    const parsedUrl = url.parse(req.url);
-    if ('/' === parsedUrl.path) {
-        res.writeHead(200, '', {'Content-Type': 'text/plain'});
-        res.end('bonjour.');
-    }
+app.get('/', (req, res) => {
+    res.writeHead(200, '', {'Content-Type': 'text/plain'});
+    res.end('bonjour.');
+})
 
-}
-
-const server = http.createServer(handleRequest);
-server.listen(8000);
+app.listen(8000);
