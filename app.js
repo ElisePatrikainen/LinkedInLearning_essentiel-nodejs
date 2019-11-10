@@ -1,14 +1,10 @@
-const url = require('url');
+require('dotenv').config()
 const express = require('express');
 const app = express();
-const mongoClient = require('mongodb');
+const mongoose = require('mongoose');
 
 require('./router').initRouter(app);
 
-mongoClient.connect(
-    "mongodb://localhost/test", 
-    {useUnifiedTopology: true}, 
-    require('./handlers/mongoDb').connection
-)
+mongoose.connect(process.env.mongoDb, {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.listen(8000);
