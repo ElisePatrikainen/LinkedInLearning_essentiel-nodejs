@@ -1,5 +1,6 @@
+const url = require('url');
+const express = require('express');
+const app = express();
+require('./router').initRouter(app);
 
-const exemple = require('./events/customEventEmittter');
-
-exemple.timer.on('3_secondes', () => console.log('3 secondes écoulées.'));
-exemple.launchTimer();
+app.listen(8000);
